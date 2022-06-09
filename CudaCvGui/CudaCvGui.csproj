@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Process\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CudaCvDotNet\CudaCvDotNet.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if exist $(TargetDir)CudaCv.dll del $(TargetDir)CudaCv.dll&#xD;&#xA;if exist $(TargetDir)CudaCv.pdb del $(TargetDir)CudaCv.pdb&#xD;&#xA;copy $(SolutionDir)CudaCv\x64\$(Configuration)\CudaCv.dll $(TargetDir)&#xD;&#xA;copy $(SolutionDir)CudaCv\x64\$(Configuration)\CudaCv.pdb $(TargetDir)" />
+  </Target>
+
+</Project>
