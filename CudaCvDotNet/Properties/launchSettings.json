@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "CudaCvDotNet": {
-      "commandName": "Project",
-      "nativeDebugging": true
-    }
-  }
-}
