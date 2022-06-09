@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "CudaCvGui": {
-      "commandName": "Project",
-      "nativeDebugging": true
-    }
-  }
-}
